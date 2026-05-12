@@ -1,0 +1,576 @@
+ERROR - 2026-04-21 08:15:01 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' to database 'bibliotheque' in /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('127.0.0.1', '', Object(SensitiveParameterValue), 'bibliotheque', 3306, '', 0)
+#1 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#5 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/app/Controllers/Livre.php(10): CodeIgniter\BaseModel->findAll()
+#7 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(951): App\Controllers\Livre->index()
+#8 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Livre))
+#9 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/public/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/rewrite.php(44): require_once('/Users/airs/Doc...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' to database 'bibliotheque' in /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#4 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/app/Controllers/Livre.php(10): CodeIgniter\BaseModel->findAll()
+#6 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(951): App\Controllers\Livre->index()
+#7 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Livre))
+#8 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/public/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/rewrite.php(44): require_once('/Users/airs/Doc...')
+#13 {main}
+CRITICAL - 2026-04-21 08:15:01 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' to database 'bibliotheque'
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 606.
+ 1 SYSTEMPATH/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `livres`', [], false)
+ 3 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH/Controllers/Livre.php(10): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Livre->index()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Livre))
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/public/index.php')
+ERROR - 2026-04-21 08:15:03 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' to database 'bibliotheque' in /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('127.0.0.1', '', Object(SensitiveParameterValue), 'bibliotheque', 3306, '', 0)
+#1 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#5 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/app/Controllers/Livre.php(10): CodeIgniter\BaseModel->findAll()
+#7 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(951): App\Controllers\Livre->index()
+#8 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Livre))
+#9 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/public/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/rewrite.php(44): require_once('/Users/airs/Doc...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' to database 'bibliotheque' in /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#4 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/app/Controllers/Livre.php(10): CodeIgniter\BaseModel->findAll()
+#6 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(951): App\Controllers\Livre->index()
+#7 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Livre))
+#8 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/public/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/rewrite.php(44): require_once('/Users/airs/Doc...')
+#13 {main}
+CRITICAL - 2026-04-21 08:15:03 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' to database 'bibliotheque'
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 606.
+ 1 SYSTEMPATH/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `livres`', [], false)
+ 3 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH/Controllers/Livre.php(10): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Livre->index()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Livre))
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/public/index.php')
+ERROR - 2026-04-21 08:15:03 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' to database 'bibliotheque' in /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('127.0.0.1', '', Object(SensitiveParameterValue), 'bibliotheque', 3306, '', 0)
+#1 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#5 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/app/Controllers/Livre.php(10): CodeIgniter\BaseModel->findAll()
+#7 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(951): App\Controllers\Livre->index()
+#8 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Livre))
+#9 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/public/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/rewrite.php(44): require_once('/Users/airs/Doc...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' to database 'bibliotheque' in /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#4 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/app/Controllers/Livre.php(10): CodeIgniter\BaseModel->findAll()
+#6 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(951): App\Controllers\Livre->index()
+#7 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Livre))
+#8 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/public/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/rewrite.php(44): require_once('/Users/airs/Doc...')
+#13 {main}
+CRITICAL - 2026-04-21 08:15:03 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' to database 'bibliotheque'
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 606.
+ 1 SYSTEMPATH/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `livres`', [], false)
+ 3 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH/Controllers/Livre.php(10): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Livre->index()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Livre))
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/public/index.php')
+ERROR - 2026-04-21 08:15:04 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' to database 'bibliotheque' in /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('127.0.0.1', '', Object(SensitiveParameterValue), 'bibliotheque', 3306, '', 0)
+#1 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#5 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/app/Controllers/Livre.php(10): CodeIgniter\BaseModel->findAll()
+#7 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(951): App\Controllers\Livre->index()
+#8 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Livre))
+#9 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/public/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/rewrite.php(44): require_once('/Users/airs/Doc...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' to database 'bibliotheque' in /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#4 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/app/Controllers/Livre.php(10): CodeIgniter\BaseModel->findAll()
+#6 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(951): App\Controllers\Livre->index()
+#7 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Livre))
+#8 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/public/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/rewrite.php(44): require_once('/Users/airs/Doc...')
+#13 {main}
+CRITICAL - 2026-04-21 08:15:04 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' to database 'bibliotheque'
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 606.
+ 1 SYSTEMPATH/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `livres`', [], false)
+ 3 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH/Controllers/Livre.php(10): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Livre->index()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Livre))
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/public/index.php')
+ERROR - 2026-04-21 08:15:04 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' to database 'bibliotheque' in /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('127.0.0.1', '', Object(SensitiveParameterValue), 'bibliotheque', 3306, '', 0)
+#1 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#5 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/app/Controllers/Livre.php(10): CodeIgniter\BaseModel->findAll()
+#7 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(951): App\Controllers\Livre->index()
+#8 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Livre))
+#9 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/public/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/rewrite.php(44): require_once('/Users/airs/Doc...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' to database 'bibliotheque' in /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#4 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/app/Controllers/Livre.php(10): CodeIgniter\BaseModel->findAll()
+#6 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(951): App\Controllers\Livre->index()
+#7 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Livre))
+#8 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/public/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/rewrite.php(44): require_once('/Users/airs/Doc...')
+#13 {main}
+CRITICAL - 2026-04-21 08:15:04 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' to database 'bibliotheque'
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 606.
+ 1 SYSTEMPATH/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `livres`', [], false)
+ 3 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH/Controllers/Livre.php(10): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Livre->index()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Livre))
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/public/index.php')
+CRITICAL - 2026-04-21 08:15:21 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "livres/create.php"
+[Method: GET, Route: livre/ajouter]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('livres/create.php')
+ 2 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render('livres/create', [], true)
+ 3 APPPATH/Controllers/Livre.php(23): view('livres/create')
+ 4 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Livre->create()
+ 5 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Livre))
+ 6 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/public/index.php')
+ERROR - 2026-04-21 08:22:03 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' to database 'bibliotheque' in /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('127.0.0.1', '', Object(SensitiveParameterValue), 'bibliotheque', 3306, '', 0)
+#1 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#5 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/app/Controllers/Livre.php(10): CodeIgniter\BaseModel->findAll()
+#7 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(951): App\Controllers\Livre->index()
+#8 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Livre))
+#9 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/public/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/rewrite.php(44): require_once('/Users/airs/Doc...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' to database 'bibliotheque' in /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#4 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/app/Controllers/Livre.php(10): CodeIgniter\BaseModel->findAll()
+#6 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(951): App\Controllers\Livre->index()
+#7 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Livre))
+#8 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/public/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/rewrite.php(44): require_once('/Users/airs/Doc...')
+#13 {main}
+CRITICAL - 2026-04-21 08:22:03 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' to database 'bibliotheque'
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 606.
+ 1 SYSTEMPATH/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `livres`', [], false)
+ 3 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH/Controllers/Livre.php(10): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Livre->index()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Livre))
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/public/index.php')
+ERROR - 2026-04-21 08:22:04 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' to database 'bibliotheque' in /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('127.0.0.1', '', Object(SensitiveParameterValue), 'bibliotheque', 3306, '', 0)
+#1 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#5 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/app/Controllers/Livre.php(10): CodeIgniter\BaseModel->findAll()
+#7 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(951): App\Controllers\Livre->index()
+#8 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Livre))
+#9 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/public/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/rewrite.php(44): require_once('/Users/airs/Doc...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' to database 'bibliotheque' in /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#4 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/app/Controllers/Livre.php(10): CodeIgniter\BaseModel->findAll()
+#6 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(951): App\Controllers\Livre->index()
+#7 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Livre))
+#8 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/public/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/rewrite.php(44): require_once('/Users/airs/Doc...')
+#13 {main}
+CRITICAL - 2026-04-21 08:22:04 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' to database 'bibliotheque'
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 606.
+ 1 SYSTEMPATH/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `livres`', [], false)
+ 3 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH/Controllers/Livre.php(10): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Livre->index()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Livre))
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/public/index.php')
+ERROR - 2026-04-21 08:25:22 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' to database 'bibliotheque' in /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('127.0.0.1', '', Object(SensitiveParameterValue), 'bibliotheque', 3306, '', 0)
+#1 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#5 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/app/Controllers/Livre.php(10): CodeIgniter\BaseModel->findAll()
+#7 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(951): App\Controllers\Livre->index()
+#8 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Livre))
+#9 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/public/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/rewrite.php(44): require_once('/Users/airs/Doc...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' to database 'bibliotheque' in /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#4 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/app/Controllers/Livre.php(10): CodeIgniter\BaseModel->findAll()
+#6 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(951): App\Controllers\Livre->index()
+#7 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Livre))
+#8 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/public/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/rewrite.php(44): require_once('/Users/airs/Doc...')
+#13 {main}
+CRITICAL - 2026-04-21 08:25:22 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' to database 'bibliotheque'
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 606.
+ 1 SYSTEMPATH/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `livres`', [], false)
+ 3 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH/Controllers/Livre.php(10): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Livre->index()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Livre))
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/public/index.php')
+ERROR - 2026-04-21 08:27:23 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' to database 'bibliotheque' in /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('127.0.0.1', '', Object(SensitiveParameterValue), 'bibliotheque', 3306, '', 0)
+#1 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#5 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/app/Controllers/Livre.php(10): CodeIgniter\BaseModel->findAll()
+#7 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(951): App\Controllers\Livre->index()
+#8 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Livre))
+#9 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/public/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/rewrite.php(44): require_once('/Users/airs/Doc...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' to database 'bibliotheque' in /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#4 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/app/Controllers/Livre.php(10): CodeIgniter\BaseModel->findAll()
+#6 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(951): App\Controllers\Livre->index()
+#7 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Livre))
+#8 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/public/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/rewrite.php(44): require_once('/Users/airs/Doc...')
+#13 {main}
+CRITICAL - 2026-04-21 08:27:23 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' to database 'bibliotheque'
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 606.
+ 1 SYSTEMPATH/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `livres`', [], false)
+ 3 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH/Controllers/Livre.php(10): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Livre->index()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Livre))
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/public/index.php')
+CRITICAL - 2026-04-21 08:29:21 --> CodeIgniter\Validation\Exceptions\ValidationException: "checkYearNotFuture" is not a valid rule.
+[Method: POST, Route: livre/ajouter]
+in SYSTEMPATH/Validation/Validation.php on line 354.
+ 1 SYSTEMPATH/Validation/Validation.php(354): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('checkYearNotFuture')
+ 2 SYSTEMPATH/Validation/Validation.php(210): CodeIgniter\Validation\Validation->processRules('annee_publication', 'annee_publication', '2010', [...], [...], 'annee_publication')
+ 3 SYSTEMPATH/BaseModel.php(1615): CodeIgniter\Validation\Validation->run([...], null, null)
+ 4 SYSTEMPATH/BaseModel.php(868): CodeIgniter\BaseModel->validate([...])
+ 5 SYSTEMPATH/Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 6 APPPATH/Controllers/Livre.php(29): CodeIgniter\Model->insert([...])
+ 7 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Livre->store()
+ 8 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Livre))
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/public/index.php')
+WARNING - 2026-04-21 08:30:34 --> [DEPRECATED] App\Models\LivreModel::checkYearNotFuture(): Implicitly marking parameter $error as nullable is deprecated, the explicit nullable type must be used instead in APPPATH/Models/LivreModel.php on line 34.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(315): include_once('/Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Debug/Exceptions.php')
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('/Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/app/Models/LivreModel.php')
+ 3 SYSTEMPATH/Autoloader/Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\LivreModel')
+ 4 APPPATH/Controllers/Livre.php(9): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\LivreModel')
+ 5 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Livre->index()
+ 6 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Livre))
+ 7 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/public/index.php')
+WARNING - 2026-04-21 08:30:34 --> [DEPRECATED] App\Models\LivreModel::search(): Implicitly marking parameter $categorie as nullable is deprecated, the explicit nullable type must be used instead in APPPATH/Models/LivreModel.php on line 44.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(315): include_once('/Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/system/Debug/Exceptions.php')
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('/Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/app/Models/LivreModel.php')
+ 3 SYSTEMPATH/Autoloader/Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\LivreModel')
+ 4 APPPATH/Controllers/Livre.php(9): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\LivreModel')
+ 5 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Livre->index()
+ 6 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Livre))
+ 7 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/public/index.php')
+CRITICAL - 2026-04-21 08:30:46 --> CodeIgniter\Validation\Exceptions\ValidationException: "checkYearNotFuture" is not a valid rule.
+[Method: POST, Route: livre/ajouter]
+in SYSTEMPATH/Validation/Validation.php on line 354.
+ 1 SYSTEMPATH/Validation/Validation.php(354): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('checkYearNotFuture')
+ 2 SYSTEMPATH/Validation/Validation.php(210): CodeIgniter\Validation\Validation->processRules('annee_publication', 'annee_publication', '2010', [...], [...], 'annee_publication')
+ 3 SYSTEMPATH/BaseModel.php(1615): CodeIgniter\Validation\Validation->run([...], null, null)
+ 4 SYSTEMPATH/BaseModel.php(868): CodeIgniter\BaseModel->validate([...])
+ 5 SYSTEMPATH/Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 6 APPPATH/Controllers/Livre.php(29): CodeIgniter\Model->insert([...])
+ 7 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Livre->store()
+ 8 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Livre))
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/public/index.php')
+CRITICAL - 2026-04-21 08:31:44 --> CodeIgniter\Validation\Exceptions\ValidationException: "checkYearNotFuture" is not a valid rule.
+[Method: POST, Route: livre/ajouter]
+in SYSTEMPATH/Validation/Validation.php on line 354.
+ 1 SYSTEMPATH/Validation/Validation.php(354): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('checkYearNotFuture')
+ 2 SYSTEMPATH/Validation/Validation.php(210): CodeIgniter\Validation\Validation->processRules('annee_publication', 'annee_publication', '2010', [...], [...], 'annee_publication')
+ 3 SYSTEMPATH/BaseModel.php(1615): CodeIgniter\Validation\Validation->run([...], null, null)
+ 4 SYSTEMPATH/BaseModel.php(868): CodeIgniter\BaseModel->validate([...])
+ 5 SYSTEMPATH/Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 6 APPPATH/Controllers/Livre.php(29): CodeIgniter\Model->insert([...])
+ 7 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Livre->store()
+ 8 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Livre))
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/public/index.php')
+CRITICAL - 2026-04-21 08:33:29 --> CodeIgniter\Validation\Exceptions\ValidationException: "checkYearNotFuture" is not a valid rule.
+[Method: POST, Route: livre/ajouter]
+in SYSTEMPATH/Validation/Validation.php on line 354.
+ 1 SYSTEMPATH/Validation/Validation.php(354): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('checkYearNotFuture')
+ 2 SYSTEMPATH/Validation/Validation.php(210): CodeIgniter\Validation\Validation->processRules('annee_publication', 'annee_publication', '2010', [...], [...], 'annee_publication')
+ 3 SYSTEMPATH/BaseModel.php(1615): CodeIgniter\Validation\Validation->run([...], null, null)
+ 4 SYSTEMPATH/BaseModel.php(868): CodeIgniter\BaseModel->validate([...])
+ 5 SYSTEMPATH/Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 6 APPPATH/Controllers/Livre.php(29): CodeIgniter\Model->insert([...])
+ 7 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Livre->store()
+ 8 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Livre))
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/public/index.php')
+CRITICAL - 2026-04-21 08:33:31 --> CodeIgniter\Validation\Exceptions\ValidationException: "checkYearNotFuture" is not a valid rule.
+[Method: POST, Route: livre/ajouter]
+in SYSTEMPATH/Validation/Validation.php on line 354.
+ 1 SYSTEMPATH/Validation/Validation.php(354): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('checkYearNotFuture')
+ 2 SYSTEMPATH/Validation/Validation.php(210): CodeIgniter\Validation\Validation->processRules('annee_publication', 'annee_publication', '2010', [...], [...], 'annee_publication')
+ 3 SYSTEMPATH/BaseModel.php(1615): CodeIgniter\Validation\Validation->run([...], null, null)
+ 4 SYSTEMPATH/BaseModel.php(868): CodeIgniter\BaseModel->validate([...])
+ 5 SYSTEMPATH/Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 6 APPPATH/Controllers/Livre.php(29): CodeIgniter\Model->insert([...])
+ 7 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Livre->store()
+ 8 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Livre))
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Users/airs/Documents/L2/S4/M.ROJO/Gestion de biblio/public/index.php')
