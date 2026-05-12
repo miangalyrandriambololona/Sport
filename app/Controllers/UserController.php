@@ -1,38 +1,34 @@
-<?php
-namespace App\Controllers;
+<?php namespace App\Controllers;
 use App\Models\UserModel;
 
 class UserController extends BaseController {
 
-    public function register() {
-        return view('register_view'); // Créez ce fichier dans Views
+    public function register() { return view('register_view'); }
+
+    public function register_action() {
+        $model = new UserModel();
+        $model->save([
+            'nom'      => $this->request->getVar('nom'),
+            'email'    => $this->request->getVar('email'),
+            'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
+            'role'     => 'client'
+        ]);
+        return redirect()->to('/login')->with('success', 'Inscription réussie !');
     }
 
-    public function login() {
-        return view('login_view'); // Créez ce fichier dans Views
-    }
+    public function login() { return view('login_view'); }
 
     public function login_action() {
         $session = session();
         $model = new UserModel();
-        $email = $this->request->getVar('email');
-        $password = $this->request->getVar('password');
-        
-        $user = $model->where('email', $email)->first();
+        $user = $model->where('email', $this->request->getVar('email'))->first();
 
-        if($user && password_verify($password, $user['password'])) {
-            $session->set([
-                'user_id' => $user['id'],
-                'user_role' => $user['role'],
-                'isLoggedIn' => true
-            ]);
+        if($user && password_verify($this->request->getVar('password'), $user['password'])) {
+            $session->set(['user_id' => $user['id'], 'user_nom' => $user['nom'], 'isLoggedIn' => true]);
             return redirect()->to('/creneaux');
         }
         return redirect()->back()->with('error', 'Identifiants incorrects');
     }
 
-    public function logout() {
-        session()->destroy();
-        return redirect()->to('/login');
-    }
+    public function logout() { session()->destroy(); return redirect()->to('/login'); }
 }
