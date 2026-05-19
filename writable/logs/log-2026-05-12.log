@@ -1,0 +1,27 @@
+ERROR - 2026-05-12 08:28:23 --> UNIQUE constraint failed: users.email
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 163.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(163): SQLite3->exec('INSERT INTO `users` (`nom`, `email`, `password`, `role`, `created_at`) VALUES (\'Admin FitSpace\', \'admin@fitspace.mg\', \'$2y$12$orIDZcxcWTayXvTZ0GbcJO8kz0nB3ULKauF1zdGsrpmA9JxUvcdAq\', \'admin\', \'2026-05-12 08:28:23\')')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('INSERT INTO `users` (`nom`, `email`, `password`, `role`, `created_at`) VALUES (\'Admin FitSpace\', \'admin@fitspace.mg\', \'$2y$12$orIDZcxcWTayXvTZ0GbcJO8kz0nB3ULKauF1zdGsrpmA9JxUvcdAq\', \'admin\', \'2026-05-12 08:28:23\')')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `users` (`nom`, `email`, `password`, `role`, `created_at`) VALUES (\'Admin FitSpace\', \'admin@fitspace.mg\', \'$2y$12$orIDZcxcWTayXvTZ0GbcJO8kz0nB3ULKauF1zdGsrpmA9JxUvcdAq\', \'admin\', \'2026-05-12 08:28:23\')')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`nom`, `email`, `password`, `role`, `created_at`) VALUES (:nom:, :email:, :password:, :role:, :created_at:)', [...], false)
+ 5 APPPATH/Database/Seeds/FitspaceSeeder.php(22): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 SYSTEMPATH/Database/Seeder.php(155): App\Database\Seeds\FitspaceSeeder->run()
+ 7 SYSTEMPATH/Commands/Database/Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\FitspaceSeeder')
+ 8 SYSTEMPATH/CLI/Commands.php(74): CodeIgniter\Commands\Database\Seed->run([])
+ 9 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+10 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+11 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+12 ROOTPATH/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+CRITICAL - 2026-05-12 08:33:56 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "register_view.php"
+[Method: GET, Route: register]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('register_view.php')
+ 2 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render('register_view', [], true)
+ 3 APPPATH/Controllers/UserController.php(33): view('register_view')
+ 4 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\UserController->register()
+ 5 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 6 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Users/airs/Desktop/Sport/public/index.php')

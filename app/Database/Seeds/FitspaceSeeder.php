@@ -8,41 +8,87 @@ class FitspaceSeeder extends Seeder
 {
     public function run()
     {
-        // 1. Création de l'Administrateur par défaut
-        $adminData = [
-            'nom'      => 'Admin FitSpace',
-            'email'    => 'admin@fitspace.mg',
-            // password_hash permet de sécuriser le mot de passe "admin123"
-            'password' => password_hash('admin123', PASSWORD_DEFAULT),
-            'role'     => 'admin',
-            'created_at' => date('Y-m-d H:i:s'),
-        ];
+        $db = \Config\Database::connect();
 
-        // On insère l'admin dans la table 'users'
-        $this->db->table('users')->insert($adminData);
+        // Désactivation temporaire des clés étrangères pour SQLite
+        $db->simpleQuery('PRAGMA foreign_keys = OFF;');
 
-        // 2. Création d'une ressource de test (Une salle)
-        $ressourceData = [
-            'nom'         => 'Salle Zen',
-            'type'        => 'cours',
-            'capacite'    => 10,
-            'description' => 'Espace dédié au yoga et à la relaxation.',
-        ];
+        try {
+            // Nettoyage des tables
+            $db->table('reservations')->truncate();
+            $db->table('creneaux')->truncate();
 
-        $this->db->table('ressources')->insert($ressourceData);
-        
-        // On récupère l'ID de la ressource qu'on vient de créer pour le créneau
-        $ressourceId = $this->db->insertID();
+            echo "Tables vidées avec succès.\n";
 
-        // 3. Création d'un créneau de test (Demain à 08h00)
-        $creneauData = [
-            'ressource_id' => $ressourceId,
-            'date_debut'   => date('Y-m-d', strtotime('+1 day')) . ' 08:00:00',
-            'date_fin'     => date('Y-m-d', strtotime('+1 day')) . ' 09:30:00',
-            'places_dispo' => 10,
-            'actif'        => 1,
-        ];
+            // ==================== RESSOURCES ====================
+            $ressourceModel = new \App\Models\RessourceModel();
 
-        $this->db->table('creneaux')->insert($creneauData);
+            // Vérifier s'il y a déjà des ressources
+            if ($ressourceModel->countAll() === 0) {
+                $ressources = [
+                    [
+                        'nom'         => 'Salle Zen',
+                        'type'        => 'cours',
+                        'capacite'    => 10,
+                        'description' => 'Espace dédié au yoga et à la relaxation.'
+                    ],
+                    [
+                        'nom'         => 'Plateau Musculation',
+                        'type'        => 'salle',
+                        'capacite'    => 25,
+                        'description' => 'Accès libre aux équipements de cardio et musculation.'
+                    ],
+                    [
+                        'nom'         => 'Court de Squash',
+                        'type'        => 'terrain',
+                        'capacite'    => 2,
+                        'description' => 'Terrain de squash pour deux personnes maximum.'
+                    ]
+                ];
+
+                foreach ($ressources as $r) {
+                    $ressourceModel->insert($r);
+                }
+                echo "✅ " . count($ressources) . " ressources créées.\n";
+            } else {
+                echo "ℹ️ Ressources déjà existantes.\n";
+            }
+
+            // ==================== CRÉNEAUX ====================
+            $creneauModel = new \App\Models\CreneauxModel();
+            $ressources = $db->table('ressources')->get()->getResultArray();
+
+            $creneauxCrees = 0;
+
+            foreach ($ressources as $res) {
+                // Créneau Matin
+                $creneauModel->insert([
+                    'ressource_id' => $res['id'],
+                    'date_debut'   => date('Y-m-d', strtotime('+1 day')) . ' 08:00:00',
+                    'date_fin'     => date('Y-m-d', strtotime('+1 day')) . ' 09:30:00',
+                    'places_dispo' => $res['capacite'],
+                    'actif'        => 1,
+                ]);
+                $creneauxCrees++;
+
+                // Créneau Après-midi
+                $creneauModel->insert([
+                    'ressource_id' => $res['id'],
+                    'date_debut'   => date('Y-m-d', strtotime('+1 day')) . ' 15:00:00',
+                    'date_fin'     => date('Y-m-d', strtotime('+1 day')) . ' 16:30:00',
+                    'places_dispo' => $res['capacite'],
+                    'actif'        => 1,
+                ]);
+                $creneauxCrees++;
+            }
+
+            echo "✅ $creneauxCrees créneaux créés avec succès.\n";
+
+        } catch (\Exception $e) {
+            echo "❌ Erreur : " . $e->getMessage() . "\n";
+        }
+
+        // Réactivation des clés étrangères
+        $db->simpleQuery('PRAGMA foreign_keys = ON;');
     }
 }
